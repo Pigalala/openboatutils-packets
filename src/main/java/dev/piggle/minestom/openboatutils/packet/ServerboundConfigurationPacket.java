@@ -1,11 +1,11 @@
 package dev.piggle.minestom.openboatutils.packet;
 
 import dev.piggle.minestom.openboatutils.OpenBoatUtils;
-import dev.piggle.minestom.openboatutils.packet.serverbound.configuration.ConfigurationVersionPacket;
+import dev.piggle.minestom.openboatutils.packet.serverbound.configuration.ConfigurationVersion;
 import net.minestom.server.network.NetworkBuffer;
 
 public enum ServerboundConfigurationPacket implements PacketType {
-    VERSION(ConfigurationVersionPacket.TEMPLATE),
+    VERSION(ConfigurationVersion.TEMPLATE),
     ;
 
     private final NetworkBuffer.Type<?> bufferType;
