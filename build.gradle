@@ -1,0 +1,75 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'net.minestom:minestom:2026.04.11-1.21.11'
+    compileOnlyApi 'org.jspecify:jspecify:1.0.0'
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'dev.piggle'
+            artifactId = 'minestom-openboatutils-packets'
+            version = project.version.toString()
+
+            from components.java
+
+            pom {
+                name = artifactId
+                description = project.description
+                url = 'https://github.com/Pigalala/minestom-openboatutils-packets'
+
+                scm {
+                    connection = 'scm:git:git://github.com/Pigalala/minestom-openboatutils-packets.git'
+                    developerConnection = 'scm:git:git@github.com:Pigalala/minestom-openboatutils-packets.git'
+                    url = 'https://github.com/Pigalala/FilterMap'
+                    tag = System.getenv('TAG_VERSION') == null ? 'HEAD' : System.getenv('TAG_VERSION')
+                }
+
+                ciManagement {
+                    system = 'Github Actions'
+                    url = 'https://github.com/Pigalala/minestom-openboatutils-packets/actions'
+                }
+
+                issueManagement {
+                    system = 'GitHub'
+                    url = 'https://github.com/Pigalala/minestom-openboatutils-packets/issues'
+                }
+
+                developers {
+                    developer {
+                        id = 'pigalala'
+                        name = 'Piggle'
+                        email = 'w8888mc@gmail.com'
+                    }
+                }
+
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://github.com/Pigalala/minestom-openboatutils-packets/blob/master/LICENSE'
+                    }
+                }
+            }
+        }
+    }
+}
+
+signing {
+    useInMemoryPgpKeys System.getenv("SIGNING_KEY"), System.getenv("SIGNING_PASSWORD")
+    sign publishing.publications.maven
+}
