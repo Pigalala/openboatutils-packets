@@ -30,7 +30,7 @@ publishing {
 
             pom {
                 name = artifactId
-                description = project.description
+                description = 'A Java library which makes it easy to interact with OpenBoatUtils clients on Minestom servers. Originally developed for the Giftlift server'
                 url = 'https://github.com/Pigalala/minestom-openboatutils-packets'
 
                 scm {
