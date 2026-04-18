@@ -5,7 +5,7 @@ plugins {
     id 'com.gradleup.nmcp.settings' version '1.4.4'
 }
 
-rootProject.name = 'minestom-openboatutils-packets'
+rootProject.name = 'openboatutils-packets'
 
 nmcpSettings {
     centralPortal {
@@ -14,7 +14,7 @@ nmcpSettings {
         publishingType = "AUTOMATIC"
 
         def version = System.getenv("TAG_VERSION")
-        publicationName = "minestom-openboatutils-packets:$version"
+        publicationName = "openboatutils-packets:$version"
 
         validationTimeout = Duration.of(30, ChronoUnit.MINUTES)
         publishingTimeout = Duration.ZERO
