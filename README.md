@@ -15,7 +15,7 @@ Call the `OpenBoatUtils.init()` method when you are ready to start sending/recei
 (ideally before the server starts accepting player connections)
 
 ### Sending packets
-Sendable packets are located in `dev.piggle.minestom.openboatutils.packet.clientbound.<type>.*`
+Sendable packets are located in `dev.piggle.obupackets.packet.clientbound.<type>.*`
 
 Use `OpenBoatUtils.sendPacket(player, packet)` to send an OBU packet to a player
 
@@ -25,9 +25,9 @@ OpenBoatUtils.sendPacket(player, new SettingsReset());
 ```
 
 ### Receiving packets
-Receivable packets are located in `dev.piggle.minestom.openboatutils.packet.serverbound.<type>.*`
+Receivable packets are located in `dev.piggle.obupackets.packet.serverbound.<type>.*`
 
-Listen to the `dev.piggle.minestom.openboatutils.event.BoatUtilsPacketReceiveEvent` event for incoming packets.
+Listen to the `dev.piggle.obupackets.event.BoatUtilsPacketReceiveEvent` event for incoming packets.
 
 Example:
 ```java

@@ -1,0 +1,56 @@
+package dev.piggle.obupackets.packet;
+
+import dev.piggle.obupackets.OpenBoatUtils;
+
+public enum ClientboundSettingsPacket implements PacketType {
+    RESET,
+    SET_STEP_HEIGHT,
+    SET_DEFAULT_SLIPPERINESS,
+    SET_BLOCKS_SLIPPERINESS,
+    SET_BOAT_FALL_DAMAGE,
+    SET_BOAT_WATER_ELEVATION,
+    SET_AIR_CONTROL,
+    SET_BOAT_JUMP_FORCE,
+    SET_MODE,
+    SET_GRAVITY,
+    SET_YAW_ACCEL,
+    SET_FORWARD_ACCEL,
+    SET_BACKWARD_ACCEL,
+    SET_TURN_ACCEL,
+    ALLOW_ACCEL_STACKING,
+    RESEND_VERSION,
+    SET_UNDERWATER_CONTROL,
+    SET_SURFACE_WATER_CONTROL,
+    SET_EXCLUSIVE_MODE,
+    SET_COYOTE_TIME,
+    SET_WATER_JUMPING,
+    SET_SWIM_FORCE,
+    REMOVE_BLOCKS_SLIPPERINESS,
+    CLEAR_SLIPPERINESS,
+    MODE_SERIES,
+    EXCLUSIVE_MODE_SERIES,
+    SET_PER_BLOCK,
+    SET_COLLISION_MODE,
+    SET_STEP_WHILE_FALLING,
+    SET_INTERPOLATION_COMPAT,
+    SET_COLLISION_RESOLUTION,
+    ADD_COLLISION_ENTITYTYPE_FILTER,
+    CLEAR_COLLISION_ENTITYTYPE_FILTER,
+    TRANSACTION,
+    SET_WALLTAP_MULTIPLIER,
+    SET_JUMPS,
+    SET_SCALE,
+    SET_STEP_UP_SLIPPERINESS,
+    SET_RESET_ON_WORLD_LOAD,
+    ;
+
+    @Override
+    public int getPacketId() {
+        return ordinal();
+    }
+
+    @Override
+    public String getChannel() {
+        return OpenBoatUtils.CHANNEL_SETTINGS;
+    }
+}
