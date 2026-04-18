@@ -23,31 +23,31 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'dev.piggle'
-            artifactId = 'minestom-openboatutils-packets'
+            artifactId = 'openboatutils-packets'
             version = project.version.toString()
 
             from components.java
 
             pom {
                 name = artifactId
-                description = 'A Java library which makes it easy to interact with OpenBoatUtils clients on Minestom servers. Originally developed for the Giftlift server'
-                url = 'https://github.com/Pigalala/minestom-openboatutils-packets'
+                description = 'A Java library which makes it easy to interact with OpenBoatUtils clients'
+                url = 'https://github.com/Pigalala/openboatutils-packets'
 
                 scm {
-                    connection = 'scm:git:git://github.com/Pigalala/minestom-openboatutils-packets.git'
-                    developerConnection = 'scm:git:git@github.com:Pigalala/minestom-openboatutils-packets.git'
-                    url = 'https://github.com/Pigalala/FilterMap'
+                    connection = 'scm:git:git://github.com/Pigalala/openboatutils-packets.git'
+                    developerConnection = 'scm:git:git@github.com:Pigalala/openboatutils-packets.git'
+                    url = 'https://github.com/Pigalala/openboatutils-packets'
                     tag = System.getenv('TAG_VERSION') == null ? 'HEAD' : System.getenv('TAG_VERSION')
                 }
 
                 ciManagement {
                     system = 'Github Actions'
-                    url = 'https://github.com/Pigalala/minestom-openboatutils-packets/actions'
+                    url = 'https://github.com/Pigalala/openboatutils-packets/actions'
                 }
 
                 issueManagement {
                     system = 'GitHub'
-                    url = 'https://github.com/Pigalala/minestom-openboatutils-packets/issues'
+                    url = 'https://github.com/Pigalala/openboatutils-packets/issues'
                 }
 
                 developers {
@@ -61,7 +61,7 @@ publishing {
                 licenses {
                     license {
                         name = 'MIT'
-                        url = 'https://github.com/Pigalala/minestom-openboatutils-packets/blob/master/LICENSE'
+                        url = 'https://github.com/Pigalala/openboatutils-packets/blob/master/LICENSE'
                     }
                 }
             }
