@@ -20,3 +20,5 @@ nmcpSettings {
         publishingTimeout = Duration.ZERO
     }
 }
+
+include 'minestom'
